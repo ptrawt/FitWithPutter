@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         if(!bt.isBluetoothAvailable()) {
+            btnChoose.setVisibility(View.GONE);
             Toast.makeText(this, "Bluetooth is not available on this device.", Toast.LENGTH_LONG).show();
         }
         else if(!bt.isBluetoothEnabled()) {
