@@ -32,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onStart() {
         super.onStart();
-        if(!bt.isBluetoothEnabled()) {
-            Toast.makeText(this, "Bluetooth is not connected.", Toast.LENGTH_SHORT).show();
+        if(!bt.isBluetoothAvailable()) {
+            Toast.makeText(this, "Bluetooth is not available on this device.", Toast.LENGTH_LONG).show();
+        }
+        else if(!bt.isBluetoothEnabled()) {
+            Toast.makeText(this, "Bluetooth is not connected.", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, "Bluetooth is connected.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Bluetooth is connected.", Toast.LENGTH_LONG).show();
         }
     }
 }
